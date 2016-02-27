@@ -21,42 +21,16 @@ players = ['O', 'X'],
 resultValues = [],
 winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
-function isWinning(value)
-{
-  var combination, i, j;
+function onClick() {
+  this.disabled = "disabled";
+  this.value = players[playerIndex];
 
-  for (i = 0; i < winningCombinations.length; i++)
-  {
-    combination = winningCombinations[i];
+  playerIndex == 1 ? playerIndex-- : playerIndex++;
 
-    for (j = 0; j < combination.length; j++)
-    {
-      if (resultValues[combination[j]] != value) break;
-    }
+  resetIfWinnerFound();
+};
 
-    if (j == 3) return true;
-  }
-
-  return false;
-}
-
-function reset()
-{
-  var i, 
-  inputs = gameBox.getElementsByTagName('input');
-
-  // Reset game cells
-  for (i = 0; i < inputs.length; i++)
-  {
-    inputs[i].disabled = inputs[i].value = '';
-  }
-
-  playerIndex = 1;
-  resultValues = [];
-}
-
-function resetIfWinnerFound()
-{
+function resetIfWinnerFound() {
   var i, 
   inputs = gameBox.getElementsByTagName('input');
 
@@ -78,13 +52,38 @@ function resetIfWinnerFound()
   }
 }
 
+function isWinning(value) {
+  var combination, i, j;
 
-function onClick()
-{
-  this.disabled = "disabled";
-  this.value = players[playerIndex];
+  for (i = 0; i < winningCombinations.length; i++)
+  {
+    combination = winningCombinations[i];
 
-  playerIndex == 1 ? playerIndex-- : playerIndex++;
+    for (j = 0; j < combination.length; j++)
+    {
+      if (resultValues[combination[j]] != value) break;
+    }
 
-  resetIfWinnerFound();
-};
+    if (j == 3) return true;
+  }
+
+  return false;
+}
+
+function reset() {
+  var i, 
+  inputs = gameBox.getElementsByTagName('input');
+
+  // Reset game cells
+  for (i = 0; i < inputs.length; i++)
+  {
+    inputs[i].disabled = inputs[i].value = '';
+  }
+
+  playerIndex = 1;
+  resultValues = [];
+}
+
+
+
+
