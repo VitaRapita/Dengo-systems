@@ -1,0 +1,24 @@
+#myGame
+{
+  border: 1px solid grey;
+  height: 312px;
+  width: 312px;
+}
+
+#myGame input
+{
+  border: none;
+  float: left;
+  font-size: 70px;
+  height: 100px;
+  margin: 2px;
+  width: 100px;
+}
+
+#resetButton
+{
+  border: 1px solid grey;
+  font-size: 20px;
+  height: 100px;
+  width: 314px;
+}
