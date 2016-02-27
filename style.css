@@ -1,24 +1,35 @@
 #myGame
 {
-  border: 1px solid grey;
+  border: 1px solid #266833;
   height: 312px;
   width: 312px;
+  background-color: #266833;
 }
 
 #myGame input
 {
   border: none;
   float: left;
+  color: #266833;
+  background-color: #6FCA96;
   font-size: 70px;
   height: 100px;
   margin: 2px;
   width: 100px;
+  border-radius: 10px;
+}
+
+#myGame input:focus {
+  border-radius: 10px;
+  color: #6FCA96;
 }
 
 #resetButton
 {
-  border: 1px solid grey;
-  font-size: 20px;
+  color: #266833;
+  background-color: #6FCA96;
+  border: 2px solid #266833;
+  font-size: 30px;
   height: 100px;
   width: 314px;
 }
